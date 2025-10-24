@@ -1,3 +1,6 @@
+/**
+ * Questions for Health check regarding to Covid-19
+ */
 package week02;
 
 import java.util.LinkedHashMap;
@@ -24,6 +27,7 @@ public class e03_healthChecker {
                 { "Q7", "Have you had a positive test for the virus that causes COVID-19 disease within the past 10 days? " },
                 { "Q8", "In the past 14 days, have you had close contact (within about 6 feet for 15 minutes or more) with someone with suspected or confirmed COVID-19? " },
         };
+        // Question Session
         System.out.println("== Covid-19 Screen Health ==");
         for (String[] Q : Questions) {
             System.out.printf("%s. %s ", Q[0], Q[1]);
@@ -36,10 +40,10 @@ public class e03_healthChecker {
                 System.out.println("[!] Continue - Unacceptable response: " + res);
         }
         in.close();
-        // Table
-System.out.println("===========================");
-pairPrint("Question", "Answer");
 
+        // Table
+        System.out.println("===========================");
+        pairPrint("Question", "Answer");
         for (Map.Entry<String, String> entry : data.entrySet()) {
             pairPrint(entry.getKey(), entry.getValue());
         }
