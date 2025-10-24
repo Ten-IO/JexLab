@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class e06_primeFinder {
     static boolean check(int n) {
         int min = (int) (Math.sqrt(n));
-        System.out.println(min);
         for (int i = 2; i <= min; i++) {
             if (n % i == 0)
                 return false;

@@ -14,10 +14,10 @@ public class e04_secondsToClock {
             int sec = in.nextInt();
 
             // Converter
-            System.out.println("In HH:MM:SS = "
-                    + String.format("%02d", sec / 3600) + ":"
-                    + String.format("%02d", sec % 3600 / 60) + ":"
-                    + String.format("%02d", sec % 3600 % 60));
+            System.out.println("In HH:MM:SS = " 
+            + String.format("%02d", sec / 3600) + ":" 
+            + String.format("%02d", sec % 3600 / 60) + ":"
+            + String.format("%02d", sec % 3600 % 60));
         } catch (Exception e) {
             System.out.println("[!] " + e.getClass().getSimpleName());
         }

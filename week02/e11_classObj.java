@@ -111,7 +111,7 @@ public class e11_classObj {
         }
         String[] head = ls.get(0).getHeads();
         System.out.println("+_______________________________________________________________________________________________________________________+");
-        System.out.printf("| %-20s   %-27s   %-11s   %-27s   %-20s |%n", head[0], head[1], head[2], head[3], head[4]);
+        System.out.printf("| %-20s   %-23s   %-19s   %-23s   %-20s |%n", head[0], head[1], head[2], head[3], head[4]);
         System.out.println("|_______________________________________________________________________________________________________________________|");
         for (Table t : ls) {
             String[] row = t.getRow();

@@ -23,13 +23,13 @@ public class e09_max {
                 // Check Continue status
                 System.out.print("Do you want to add more (y/n)?: ");
                 c = scan.next().toLowerCase().charAt(0);
+                i++;
                 if (c == '\0' || c == 'y')
                     continue;
                 else if (c == 'n')
                     break;
                 else
                     System.out.println("[!] Please put (y/n)");
-                i++;
             } while (yes);
             System.out.println("The biggest number among in Array is: " + big);
         } catch (Exception e) {
