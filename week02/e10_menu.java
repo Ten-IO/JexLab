@@ -1,10 +1,11 @@
 /**
  * A program to choose menu and perform calculation based on options provided; 
- * if user choose an incorrection option, program still keepasking to re-input a correct option number
+ * if user choose an incorrection option, program still keep asking to re-input a correct option number
  */
 package week02;
 
 import java.util.Scanner;
+import java.time.LocalTime;
 
 public class e10_menu {
     static float[] callInput(Scanner scan) {
@@ -21,21 +22,21 @@ public class e10_menu {
     }
 
     static void abs(float n1, float n2) {
-        System.out.printf("[+] Addition\n%02.2f - %02.2f = %02.2f", n1, n2, n1 - n2);
+        System.out.printf("[-] Substraction\n%02.2f - %02.2f = %02.2f", n1, n2, n1 - n2);
     }
 
     static void mul(float n1, float n2) {
-        System.out.printf("[+] Addition\n%02.2f x %02.2f = %02.2f", n1, n2, n1 * n2);
+        System.out.printf("[x] Multiplication\n%02.2f x %02.2f = %02.2f", n1, n2, n1 * n2);
     }
 
     static void div(float n1, float n2) {
-        System.out.printf("[+] Addition\n%02.2f ÷ %02.2f = %02.2f", n1, n2, n1 / n2);
+        System.out.printf("[/] Division\n%02.2f / %02.2f = %02.2f", n1, n2, n1 / n2);
     }
 
     public static void main(String[] args) {
         try (Scanner in = new Scanner(System.in)) {
-            int pick;
-            float[] num = new float[2];
+            int pick; // menu state
+            float[] num = new float[2]; // calculation variables
             out: while (true) {
                 System.out.println("\n\n== Math Menu ==");
                 System.out.println("1. Addition (+)\n2. Substraction (-)\n" +
@@ -74,10 +75,10 @@ public class e10_menu {
                         break;
                 }
             }
-            System.out.println("Good bye!");
+            System.out.println("Good bye! It's " + LocalTime.now().toString().substring(0, 8));
 
         } catch (Exception e) {
-            System.out.println("[!] " + e.getClass().getSimpleName());
+            System.out.println("\n[!] " + e.getClass().getSimpleName());
         }
     }
 }

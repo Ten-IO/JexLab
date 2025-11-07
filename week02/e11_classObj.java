@@ -15,9 +15,7 @@ import java.util.ArrayList;
 public class e11_classObj {
     public interface Table {
         String[] getRow();
-
         String[] getHeads();
-
     }
 
     public class IDCard implements Table {

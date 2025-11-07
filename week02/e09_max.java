@@ -20,20 +20,22 @@ public class e09_max {
                 big = i == 0 ? curr : big;
                 if (curr > big)
                     big = curr;
+
                 // Check Continue status
-                System.out.print("Do you want to add more (y/n)?: ");
-                c = scan.next().toLowerCase().charAt(0);
+                while (true) {
+                    System.out.print("Do you want to add more (y/n)?: ");
+                    c = scan.next().toLowerCase().charAt(0);
+                    if (c == 'y' || c == 'n') {
+                        yes = c=='y' ? true : false; // or yes = ( c==y )
+                        break;
+                    } else
+                        System.out.println("[!] Please put (y/n)");
+                }
                 i++;
-                if (c == '\0' || c == 'y')
-                    continue;
-                else if (c == 'n')
-                    break;
-                else
-                    System.out.println("[!] Please put (y/n)");
             } while (yes);
             System.out.println("The biggest number among in Array is: " + big);
         } catch (Exception e) {
-            System.out.println("[!] " + e.getClass().getSimpleName());
+            System.out.println("\n[!] " + e.getClass().getSimpleName());
         }
     }
 }
