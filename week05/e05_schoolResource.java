@@ -1,3 +1,7 @@
+/*
+    program to manage human resource of school
+    → User data must be permanently stored in local file  (Ex. teacher.txt, student.txt, securityguard.txt)
+*/
 package week05;
 
 import java.io.IOException;

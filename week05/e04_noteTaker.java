@@ -1,3 +1,6 @@
+/*
+    Text editor
+ */
 package week05;
 
 import java.util.*;

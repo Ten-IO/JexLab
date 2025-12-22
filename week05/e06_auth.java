@@ -1,3 +1,7 @@
+/*
+    program to manage authentication of a system.
+    → User data must be permanently stored in local files  (Ex. user.txt)
+ */
 package week05;
 
 import java.io.IOException;
