@@ -6,7 +6,7 @@ package week06;
 
 import java.util.Scanner;
 
-public class e01_newMath {
+public class e01_newMath extends AbstractMath {
     int reverseNumber(int number) {
         int reversed = 0;
         while (number != 0) {
@@ -58,7 +58,7 @@ public class e01_newMath {
     }
 
     public static void main(String[] args) {
-        e01_newMath math = new e01_newMath();
+        AbstractMath math = new e01_newMath();
         int choice = 0;
         Scanner scan = new Scanner(System.in);
         do {
@@ -83,9 +83,43 @@ public class e01_newMath {
                     int dec = input(scan, "::: Encode a number :::\nEnter a decimal number: ");
                     System.out.println("Output: " + math.decimalToBinary(dec));
                     break;
+                case 5:
+                    return;
                 default:
                     choice = 0;
             }
         } while (choice != -1);
     }
 }
+
+class AbstractMath {
+    int reverseNumber(int num) {
+        // override to return a reverse number
+        // ex. 12345 to 54321
+        return 0;
+    }
+
+    int roundNumber(double num) {
+        // override to return a arounded number
+        // ex1. 3.14 to 3
+        // ex2. 3.5 to 4
+        // ex3. 3.7 to 4
+        return 0;
+    }
+
+    int countDistinct(int[] values) {
+        // override to return the count of unique valu
+        // ex1. { -1,-1, 1,0,1, 5,9 }->3
+        // ex2. { -5, 1, 0, 6, 5, 0 } -> 4
+        return 0;
+    }
+
+    int decimalToBinary(int decimal) {
+        // override to return the binary
+        // coverted from decimal
+        // ex1. 27 -> 11011
+        // ex2. 121 -> 1111001
+        return 0;
+    }
+}
+

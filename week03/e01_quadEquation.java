@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class e01_quadEquation {
 
-    static float[] solveQuad(float a, float b, float c) {
+    public static float[] solveQuad(float a, float b, float c) {
         if (a == 0) {
             if (b != 0)
                 return new float[] { -c / b };

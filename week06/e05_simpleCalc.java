@@ -14,22 +14,22 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
- 
+import javax.swing.border.EmptyBorder;
 
 public class e05_simpleCalc {
 	public static void main(String[] args) {
-		// Apply global UI font if helper exists
-		try { new setUIFont(); } catch (Exception ignored) {}
+		new setUIFont();
 
 		JFrame f = new JFrame("Simple Calculator");
 		JPanel root = new JPanel();
 		root.setLayout(new BoxLayout(root, BoxLayout.Y_AXIS));
 
-		JPanel inputPanel = new JPanel(new GridLayout(2,2,8,8));
-		inputPanel.add(new JLabel("Number A:"));
+		JPanel inputPanel = new JPanel(new GridLayout(2,1,8,8));
+		inputPanel.setBorder(new EmptyBorder(20,20,20,20));
+		inputPanel.add(new JLabel("A:"));
 		JTextField aField = new JTextField();
 		inputPanel.add(aField);
-		inputPanel.add(new JLabel("Number B:"));
+		inputPanel.add(new JLabel("B:"));
 		JTextField bField = new JTextField();
 		inputPanel.add(bField);
 
@@ -45,6 +45,7 @@ public class e05_simpleCalc {
 		root.add(inputPanel);
 		root.add(buttons);
 		root.add(result);
+		root.add(new JLabel("Developed by ME"));
 
 		f.add(root);
 		f.pack();
@@ -55,7 +56,6 @@ public class e05_simpleCalc {
 		ActionListener doCalc = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				try {
 					double a = Double.parseDouble(aField.getText().trim());
 					double b = Double.parseDouble(bField.getText().trim());
 					String op = ((JButton)e.getSource()).getText();
@@ -67,14 +67,10 @@ public class e05_simpleCalc {
 						case "/": 
 							if (b == 0) { result.setText("Error: divide by zero"); return; }
 							r = a / b; break;
-						default: result.setText("Unknown op"); return;
+						default: result.setText("Unknown operation"); return;
 					}
-					// Format result to remove trailing .0 when integer
 					if (r == (long) r) result.setText("Result: " + String.format("%d", (long) r));
 					else result.setText("Result: " + r);
-				} catch (NumberFormatException ex) {
-					result.setText("Error: invalid number");
-				}
 			}
 		};
 

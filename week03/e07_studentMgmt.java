@@ -1,3 +1,10 @@
+/*
+a program in Java to manage student by using Student Class and Array:
+ ▪ Attributes(id, name, age, etc.)
+ ▪ Must implement the following methodsin Student class:
+ • setValues()
+ • display()
+  */
 package week03;
 
 import java.util.ArrayList;
@@ -5,7 +12,7 @@ import java.util.Scanner;
 
 public class e07_studentMgmt {
     class Student {
-        ArrayList<Info> ls = new ArrayList<>();
+        static ArrayList<Info> ls = new ArrayList<>();
         int i = 0;
 
         void setValue(Scanner scan) {
@@ -34,7 +41,7 @@ public class e07_studentMgmt {
         int id, age;
         String name;
 
-        public Info(int id, int age, String name) {
+        Info(int id, int age, String name) {
             this.id = id;
             this.age = age;
             this.name = name;

@@ -38,7 +38,6 @@ public class e06_mathClassII {
         }
         static float max(float a, float b, float c, float d, float e){
             float val = a;
-            System.out.println("== Math class showcase ==");
             if(val<b) val=b;
             else if(val<c) val=c;
             else if (val<d) val=d;
@@ -49,6 +48,7 @@ public class e06_mathClassII {
 
     public static void main(String[] args) {
         float a = 6f, b = 3.3f, c = 3f, d = 4, e = 5;
+        System.out.println("== Math class showcase ==");
         System.out.println(MathII.factorial(a));
         System.out.println(MathII.rectangleSurface(a, b));
         System.out.println(MathII.circleSurface(a));
